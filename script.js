@@ -1,4 +1,4 @@
-// Step 2: Create the Book constructor
+
 function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
@@ -6,10 +6,9 @@ function Book(title, author, pages, read) {
     this.read = read;
   }
   
-  // Step 3: Create the array to store books
+
   let myLibrary = [];
-  
-  // Step 4: Implement the addBookToLibrary function
+
   function addBookToLibrary() {
     const title = document.getElementById("title").value;
     const author = document.getElementById("author").value;
@@ -20,7 +19,7 @@ function Book(title, author, pages, read) {
     myLibrary.push(newBook);
   }
   
-  // Step 5: Display books on the page
+ 
   function displayBooks() {
     const libraryContainer = document.getElementById("library-container");
     libraryContainer.innerHTML = "";
@@ -44,7 +43,7 @@ function Book(title, author, pages, read) {
     }
   }
   
-  // Step 6: Add a "NEW BOOK" button and form
+ 
   const newBookButton = document.getElementById("new-book-btn");
   const formPopup = document.getElementById("form-popup");
   const bookForm = document.getElementById("book-form");
@@ -67,7 +66,7 @@ function Book(title, author, pages, read) {
     bookForm.reset();
   });
   
-  // Step 8: Add buttons to remove a book and toggle read status
+  
   function createRemoveButton(bookIndex) {
     const removeButton = document.createElement("button");
     removeButton.textContent = "Remove";
@@ -88,16 +87,16 @@ function Book(title, author, pages, read) {
     return readButton;
   }
   
-  // Function to remove a book from the library
+
   function removeBookFromLibrary(bookIndex) {
     myLibrary.splice(bookIndex, 1);
   }
   
-  // Function to toggle the read status of a book
+
   function toggleReadStatus(bookIndex) {
     myLibrary[bookIndex].read = !myLibrary[bookIndex].read;
   }
   
-  // Step 7: Call displayBooks initially to display any existing books in the library
+
   displayBooks();
   
