@@ -8,27 +8,41 @@
 </head>
 <body>
     <div class="container">
-
-
         <div class="head">
             <img src="book.png" class="book">
-            <h1 class="">Bookly</h1>
+            <h1 class="title">Bookly</h1>
         </div>
-
-
-
 
         <div class="action">
             <h3>Get your first book today!</h3>
-            <button class="getter">Get Book</button>
+            <button class="getter" id="new-book-btn">Get Book</button>
         </div>
 
+        <div class="library" id="library-container">
+            <!-- Books will be displayed here -->
+        </div>
 
+        <!-- Form popup -->
+        <div class="form-popup" id="form-popup">
+            <form id="book-form">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
 
+                <label for="author">Author:</label>
+                <input type="text" id="author" name="author" required>
 
+                <label for="pages">Pages:</label>
+                <input type="number" id="pages" name="pages" required>
 
+                <label for="read">Read:</label>
+                <input type="checkbox" id="read" name="read">
 
-
+                <button type="submit">Add Book</button>
+                <button type="button" id="close-btn">Close</button>
+            </form>
+        </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
