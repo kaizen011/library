@@ -48,6 +48,30 @@ function Book(title, author, pages, read) {
   const formPopup = document.getElementById("form-popup");
   const bookForm = document.getElementById("book-form");
   const closeBtn = document.getElementById("close-btn");
+
+  bookForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    if (validateForm()) {
+      addBookToLibrary();
+      displayBooks();
+      formPopup.style.display = "none";
+      bookForm.reset();
+    }
+  });
+  
+  function validateForm() {
+    const title = document.getElementById("title").value;
+    const author = document.getElementById("author").value;
+    const pages = document.getElementById("pages").value;
+    
+    if (title.trim() === "" || author.trim() === "" || isNaN(pages) || pages <= 0) {
+      alert("Please fill in all fields with valid data.");
+      return false;
+    }
+    
+    return true;
+  }
   
   newBookButton.addEventListener("click", function() {
     formPopup.style.display = "block";
